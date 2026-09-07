@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hui Zhou Xin Yi Furniture Co., Ltd | OEM Furniture Manufacturer</title>
 <meta name="description" content="Hui Zhou Xin Yi Furniture Co., Ltd offers two furniture product lines: Production Collection for OEM-ready manufactured products and Original Design Collection for original design concepts and developable samples.">
-<link rel="icon" href="/favicon.png" type="image/png">
-<link rel="shortcut icon" href="/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="favicon.png">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#171819;
-  --charcoal:#20211f;
-  --deep:#111210;
-  --paper:#f7f5ef;
-  --stone:#e5e0d6;
+  --charcoal:#24231f;
+  --deep:#15130f;
+  --paper:#f4ecdd;
+  --stone:#e2d2b8;
   --white:#fff;
-  --muted:#6d6b64;
-  --soft:#989184;
-  --gold:#b88746;
-  --gold-dark:#8a6332;
+  --muted:#6f675b;
+  --soft:#a3937d;
+  --gold:#b7834b;
+  --gold-dark:#8b6339;
   --sage:#65766b;
-  --line:rgba(32,33,31,.14);
-  --shadow:0 26px 70px rgba(21,22,20,.14);
+  --line:rgba(62,48,31,.14);
+  --shadow:0 26px 70px rgba(60,43,23,.14);
 }
 html{scroll-behavior:smooth}
 body{font-family:Inter,Arial,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.62}
@@ -36,10 +36,11 @@ img{max-width:100%}
 .topbar-contact{display:flex;gap:20px;flex-wrap:wrap;color:#d8d0c1}
 .topbar-actions{display:flex;align-items:center;gap:10px;white-space:nowrap}
 .mini-link{color:#fff;border-bottom:1px solid rgba(184,135,70,.75);padding-bottom:2px;font-weight:600}
-.nav{position:sticky;top:0;z-index:30;background:rgba(247,245,239,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:30;background:rgba(244,236,221,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .brand{display:flex;align-items:center;gap:14px;min-width:0}
-.brand-mark{width:46px;height:46px;background:var(--charcoal);color:var(--gold);display:grid;place-items:center;font-weight:800;letter-spacing:.5px}
+.brand-mark{width:64px;height:64px;background:#fff;border:1px solid rgba(32,33,31,.12);display:grid;place-items:center;overflow:hidden}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
 .brand-name{font-size:19px;font-weight:760;white-space:nowrap;color:var(--charcoal)}
 .brand-sub{font-size:11px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:#46443d}
@@ -47,30 +48,31 @@ img{max-width:100%}
 .nav-cta{background:var(--charcoal);color:#fff!important;padding:10px 16px;box-shadow:0 10px 22px rgba(32,33,31,.16)}
 .nav-cta:hover{background:var(--gold-dark)!important;color:#fff!important}
 .hero{position:relative;overflow:hidden;background:var(--deep);color:#fff}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,18,16,.92) 0%,rgba(17,18,16,.74) 45%,rgba(17,18,16,.2) 100%),url("assets/products/dining_table_black_marble_set.png");background-size:cover;background-position:center right;transform:scale(1.02)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,19,15,.93) 0%,rgba(21,19,15,.78) 46%,rgba(21,19,15,.28) 100%),url("assets/factory_strength.png");background-size:cover;background-position:center;transform:scale(1.02)}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:58px;align-items:end;min-height:650px;padding:82px 0 76px}
 .eyebrow{font-size:12px;letter-spacing:3.4px;text-transform:uppercase;color:#d5b37f;margin-bottom:22px}
 h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weight:780;max-width:850px;margin-bottom:24px}
 .hero-copy{max-width:660px;color:#e7dfd1;font-size:18px;margin-bottom:34px}
+.hero-proof{max-width:720px;margin:24px 0 0;padding-left:18px;border-left:2px solid var(--gold);color:#d9cbb6;font-size:14px;letter-spacing:.2px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 22px;border:1px solid transparent;cursor:pointer;transition:.22s ease;font-weight:720}
 .btn-primary{background:var(--gold);color:#141411;box-shadow:0 16px 35px rgba(184,135,70,.24)}
 .btn-primary:hover{background:#d3a25e;transform:translateY(-1px)}
 .btn-outline{border-color:rgba(255,255,255,.46);color:#fff;background:rgba(255,255,255,.04)}
 .btn-outline:hover{border-color:var(--gold);background:rgba(184,135,70,.14)}
-.hero-card{background:rgba(247,245,239,.92);color:var(--ink);padding:26px;border:1px solid rgba(255,255,255,.3);box-shadow:var(--shadow)}
+.hero-card{background:rgba(250,246,238,.94);color:var(--ink);padding:26px;border:1px solid rgba(255,255,255,.45);box-shadow:var(--shadow)}
 .hero-card-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--gold-dark);font-weight:800;margin-bottom:14px}
 .hero-card strong{display:block;font-size:26px;line-height:1.15;margin-bottom:10px}
 .hero-card p{color:var(--muted);font-size:14px;margin-bottom:20px}
 .hero-contact{display:grid;gap:10px;font-size:14px;color:#34332f}
 .hero-contact span{padding-top:10px;border-top:1px solid rgba(32,33,31,.12)}
-.facts{background:var(--charcoal);color:#fff}
+.facts{background:#eadcc7;color:var(--charcoal)}
 .facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.fact{padding:30px 26px;border-right:1px solid rgba(255,255,255,.1)}
+.fact{padding:30px 26px;border-right:1px solid rgba(62,48,31,.12)}
 .fact:last-child{border-right:0}
-.fact strong{display:block;color:#d6ad70;font-size:31px;line-height:1.1;margin-bottom:6px}
-.fact span{color:#c9c2b6;font-size:13px}
+.fact strong{display:block;color:var(--gold-dark);font-size:31px;line-height:1.1;margin-bottom:6px}
+.fact span{color:#5f574d;font-size:13px}
 .section{padding:86px 0;border-bottom:1px solid var(--line)}
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:46px;margin-bottom:36px}
 .kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);font-weight:820;margin-bottom:10px}
@@ -88,7 +90,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .meta-item b{font-size:15px}
 .image-strip{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;height:100%}
 .image-strip img{width:100%;height:100%;object-fit:cover;background:#fff;border:1px solid var(--line)}
-.factory-section{background:#efebe2}
+.factory-section{background:#eadcc7}
 .factory-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:30px;align-items:start}
 .factory-photo{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
 .factory-photo img{width:100%;display:block}
@@ -102,7 +104,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .trust-item b{display:block;color:#fff;margin-bottom:3px}
 .trust-item span{display:block;color:#cfc7ba;font-size:13px}
 .trust-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-.product-showcase{background:#fff}
+.product-showcase{background:#fffaf2}
 .product-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .product-card{position:relative;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:0 18px 45px rgba(32,33,31,.08);min-height:430px;display:flex;flex-direction:column;transition:.22s ease}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 28px 70px rgba(32,33,31,.16)}
@@ -214,7 +216,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 <nav class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#top" aria-label="Hui Zhou Xin Yi Furniture Co., Ltd">
-      <div class="brand-mark">XY</div>
+      <div class="brand-mark"><img src="favicon.png" alt="Xin Yi Furniture logo"></div>
       <div>
         <div class="brand-name">Hui Zhou Xin Yi Furniture</div>
         <div class="brand-sub">Export Furniture Manufacturer</div>
@@ -241,6 +243,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
         <a class="btn btn-primary" href="#contact">Contact Us / Send Inquiry</a>
         <a class="btn btn-outline" href="#production">View Collections</a>
       </div>
+      <p class="hero-proof">Established in 2003, with a 30,000 sqm self-owned factory supporting OEM production, sample development and export orders.</p>
     </div>
     <aside class="hero-card">
       <div class="hero-card-label">Direct Factory Contact</div>
@@ -459,7 +462,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg><div><div class="contact-label">WhatsApp / WeChat</div><div class="contact-value">+86 18927377818<br>+86 13500181948<br>+1 9492997327</div></div></div>
             <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8 9.72a16 16 0 0 0 6.28 6.28l1.24-1.24a2 2 0 0 1 2.11-.45c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92Z"/></svg><div><div class="contact-label">Tel / Fax</div><div class="contact-value">+86 18927377818<br>+86 13500181948<br>+1 9492997327</div></div></div>
             <div class="contact-item"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><div class="contact-label">Email</div><div class="contact-value">erichuang@xy-furniture.com<br>yhhuang171@gmail.com</div></div></div>
-            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><div class="contact-label">Address</div><div class="contact-value">Gan Pi Management Zone, Zhen Long Town, Hui Yang District, Hui Zhou City, Guang Dong Province, China 516227</div></div></div>
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><div class="contact-label">Address</div><div class="contact-value">Huanghou Management Area, Zhenlong Town, Huiyang District, Huizhou, Guangdong, China</div></div></div>
           </div>
           <div class="contact-highlight">
             <b>Contact Us / Send Inquiry</b>
