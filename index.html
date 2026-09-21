@@ -147,6 +147,29 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .terms-sub{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);font-weight:820;margin:44px 0 14px}
 .section-head + .terms-sub{margin-top:0}
 .terms-foot{font-size:13px;color:var(--muted);margin-top:18px}
+.series{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);margin-bottom:22px}
+.series.flip{grid-template-columns:.9fr 1.1fr}
+.series.flip .series-media{order:2}
+.series-media{background:#e4e4e4;line-height:0}
+.series-media img{width:100%;height:auto;display:block}
+.series-body{padding:34px}
+.series-body h3{font-size:26px;line-height:1.16;color:var(--charcoal);margin:12px 0 10px}
+.series-body p{color:#615f58;font-size:14px;margin-bottom:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.chip{border:1px solid rgba(141,102,61,.3);background:#fffaf2;color:#66513a;padding:7px 14px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:.18s}
+.chip:hover{border-color:var(--gold)}
+.chip.on{background:var(--gold);color:#171511;border-color:var(--gold)}
+.swatches{display:flex;gap:12px;align-items:center;margin:0 0 8px}
+.swatch{width:34px;height:34px;padding:0;border-radius:50%;border:2px solid #fff;background:var(--c);box-shadow:0 0 0 1px rgba(92,70,43,.35);cursor:pointer;transition:.18s}
+.swatch:hover{transform:scale(1.08)}
+.swatch.on{box-shadow:0 0 0 2px var(--gold-dark)}
+.swatch:focus-visible,.chip:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px}
+.finish-label{font-size:13px;color:#504d45;margin:0 0 18px}
+.finish-label b{color:var(--charcoal)}
+.series-list{list-style:none;display:grid;gap:8px;margin:0 0 22px;font-size:13px;color:#504d45}
+.series-list li{padding-top:8px;border-top:1px solid var(--line)}
+.series-list b{color:var(--gold-dark);text-transform:uppercase;letter-spacing:1.1px;font-size:11px;margin-right:8px}
+.series-body .series-note{font-size:12px;color:var(--muted);margin:14px 0 0}
 .contact-section{background:#eef3ec;color:var(--ink)}
 .contact-section .title{color:var(--charcoal)}
 .contact-section .desc{color:var(--muted)}
@@ -185,7 +208,8 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
   .nav-links{display:none}
   .facts-grid,.process{grid-template-columns:repeat(2,1fr)}
   .process.three{grid-template-columns:1fr}
-  .about-grid,.factory-layout,.featured-grid,.contact-grid,.section-head{display:block}
+  .about-grid,.factory-layout,.featured-grid,.contact-grid,.section-head,.series{display:block}
+  .series-body{padding:24px}
   .section-head .desc{margin-top:12px}
   .image-strip,.mini-gallery,.trust-panel{margin-top:18px}
   .contact-panel{margin-bottom:18px}
@@ -420,6 +444,66 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
         <p class="desc">This line is for buyers who want fresh styles, exclusive directions or market testing concepts before sample development and production engineering.</p>
       </div>
       <div class="collection-note"><b>Positioning:</b> Original Design Collection images are presented as original design concepts or developable sample directions. Final structure, materials, dimensions and pricing should be confirmed through sampling.</div>
+      <div class="terms-sub">Featured series</div>
+
+      <article class="series">
+        <div class="series-media"><img id="s1img" src="assets/products/series-marble-metal-gold.jpg" alt="Marble and metal dining series in gold finish: dining table, chairs, coffee table and side tables" width="1312" height="1199" loading="lazy"></div>
+        <div class="series-body">
+          <span class="line-badge concept-badge">Original design · Rendering</span>
+          <h3>Marble &amp; Metal Dining Series</h3>
+          <p>A double-pedestal dining table with a stone top and polished metal base, with coordinated chairs, round coffee table, side tables and a sideboard.</p>
+          <div class="swatches" role="group" aria-label="Finish" data-target="s1img" data-label="s1label">
+            <button type="button" class="swatch on" aria-pressed="true" aria-label="Gold" title="Gold" style="--c:linear-gradient(135deg,#e8c976,#b98a2e)" data-name="Gold" data-src="assets/products/series-marble-metal-gold.jpg" data-w="1312" data-h="1199" data-alt="Marble and metal dining series in gold finish: dining table, chairs, coffee table and side tables"></button>
+            <button type="button" class="swatch" aria-pressed="false" aria-label="Nickel" title="Nickel" style="--c:linear-gradient(135deg,#e3e5e8,#9a9ea4)" data-name="Nickel" data-src="assets/products/series-marble-metal-nickel.jpg" data-w="1312" data-h="1199" data-alt="Marble and metal dining series in nickel finish: dining table, chairs, coffee table and side tables"></button>
+            <button type="button" class="swatch" aria-pressed="false" aria-label="Champagne" title="Champagne" style="--c:linear-gradient(135deg,#dcc9b0,#b59c7e)" data-name="Champagne" data-src="assets/products/series-marble-metal-champagne.jpg" data-w="1312" data-h="1199" data-alt="Marble and metal dining series in champagne finish: dining table, chairs, side table and sideboard"></button>
+          </div>
+          <div class="finish-label">Finish: <b id="s1label">Gold</b></div>
+          <ul class="series-list">
+            <li><b>Pieces</b>Dining table, dining chairs, coffee table, side tables, sideboard</li>
+            <li><b>Shown with</b>Stone top, metal base, velvet or leather upholstery</li>
+            <li><b>Status</b>Made to order &mdash; ready for sampling</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Send Inquiry</a>
+          <p class="series-note">Renderings for design direction. Final materials, dimensions and finish are confirmed at sampling.</p>
+        </div>
+      </article>
+
+      <article class="series flip">
+        <div class="series-media"><img id="s2img" src="assets/products/series-round-pedestal-set.jpg" alt="Round pedestal dining set with four chairs and a matching side table" width="1312" height="1199" loading="lazy"></div>
+        <div class="series-body">
+          <span class="line-badge concept-badge">Original design · Rendering</span>
+          <h3>Round Pedestal Dining Series</h3>
+          <p>A round stone-top dining table on a faceted pedestal base, paired with chairs in textured fabric and contrast leather, plus a matching side table.</p>
+          <div class="chips" role="group" aria-label="View" data-target="s2img">
+            <button type="button" class="chip on" aria-pressed="true" data-src="assets/products/series-round-pedestal-set.jpg" data-w="1312" data-h="1199" data-alt="Round pedestal dining set with four chairs and a matching side table">Dining set</button>
+            <button type="button" class="chip" aria-pressed="false" data-src="assets/products/series-round-pedestal-chair.jpg" data-w="1145" data-h="1374" data-alt="Dining chair with textured fabric back, leather seat and polished metal legs">Dining chair</button>
+          </div>
+          <ul class="series-list">
+            <li><b>Pieces</b>Round dining table, dining chair, side table</li>
+            <li><b>Shown with</b>Stone top, brushed or polished metal, textured fabric and leather</li>
+            <li><b>Status</b>Made to order &mdash; ready for sampling</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Send Inquiry</a>
+          <p class="series-note">Renderings for design direction. Final materials, dimensions and finish are confirmed at sampling.</p>
+        </div>
+      </article>
+
+      <article class="series">
+        <div class="series-media"><img src="assets/products/series-sculpted-side-table.jpg" alt="Sculpted side table with a curved polished metal base and stone top" width="1145" height="1374" loading="lazy"></div>
+        <div class="series-body">
+          <span class="line-badge concept-badge">Original design · Developable sample</span>
+          <h3>Sculpted Side Table</h3>
+          <p>A statement side table with a sculpted polished metal base and a stone top, for hospitality and high-end residential projects.</p>
+          <ul class="series-list">
+            <li><b>Shown with</b>Stone top, polished metal base</li>
+            <li><b>Status</b>Engineering and cost review required before quotation</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Send Inquiry</a>
+          <p class="series-note">Rendering for design direction. Structure, materials and finish are confirmed through sampling.</p>
+        </div>
+      </article>
+
+      <div class="terms-sub">More concept directions</div>
       <div class="featured-grid">
         <div class="feature-photo">
           <img src="assets/products/dining_table_blue_chair_set.png" alt="Dining table set with blue chairs">
@@ -560,6 +644,25 @@ function showToast(message) {
   toast.classList.add("show");
   setTimeout(() => toast.classList.remove("show"), 3200);
 }
+document.querySelectorAll(".chips, .swatches").forEach((group) => {
+  const img = document.getElementById(group.dataset.target);
+  const label = group.dataset.label ? document.getElementById(group.dataset.label) : null;
+  group.addEventListener("click", (event) => {
+    const btn = event.target.closest(".chip, .swatch");
+    if (!btn || !img) return;
+    group.querySelectorAll(".chip, .swatch").forEach((chip) => {
+      chip.classList.remove("on");
+      chip.setAttribute("aria-pressed", "false");
+    });
+    btn.classList.add("on");
+    btn.setAttribute("aria-pressed", "true");
+    if (label && btn.dataset.name) label.textContent = btn.dataset.name;
+    img.width = btn.dataset.w;
+    img.height = btn.dataset.h;
+    img.src = btn.dataset.src;
+    img.alt = btn.dataset.alt;
+  });
+});
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   submitButton.disabled = true;
