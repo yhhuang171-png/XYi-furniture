@@ -48,7 +48,7 @@ img{max-width:100%}
 .nav-cta{background:var(--sage);color:#fff!important;padding:10px 16px;box-shadow:0 10px 22px rgba(63,78,66,.14)}
 .nav-cta:hover{background:var(--gold-dark)!important;color:#fff!important}
 .hero{position:relative;overflow:hidden;background:#f6efe3;color:var(--ink)}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(248,243,233,.97) 0%,rgba(248,243,233,.9) 42%,rgba(248,243,233,.46) 72%,rgba(248,243,233,.18) 100%),url("assets/products/dining_table_blue_chair_set.png");background-size:cover;background-position:center right;transform:scale(1.02)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(248,243,233,.9),rgba(248,243,233,.8)),url("assets/products/hero-gold-marble-dining.jpg");background-size:cover;background-position:70% center}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:58px;align-items:end;min-height:650px;padding:82px 0 76px}
 .eyebrow{font-size:12px;letter-spacing:3.4px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:22px;font-weight:850}
@@ -108,10 +108,10 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .trust-item span{display:block;color:#655f56;font-size:13px}
 .trust-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
 .product-showcase{background:#fffaf2}
-.product-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .product-card{position:relative;overflow:hidden;background:var(--paper);border:1px solid var(--line);box-shadow:0 18px 45px rgba(32,33,31,.08);min-height:430px;display:flex;flex-direction:column;transition:.22s ease}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 28px 70px rgba(32,33,31,.16)}
-.product-image{height:235px;background:#f4f1ea;overflow:hidden}
+.product-image{height:250px;background:#f4f1ea;overflow:hidden}
 .product-image img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s ease}
 .product-card:hover .product-image img{transform:scale(1.04)}
 .product-body{padding:20px;display:flex;flex-direction:column;gap:13px;flex:1}
@@ -198,6 +198,23 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .footer strong{display:block;color:#fff;font-size:16px;margin-bottom:4px}
 .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(30px);opacity:0;pointer-events:none;background:var(--deep);color:#fff;border:1px solid rgba(184,135,70,.5);padding:12px 18px;transition:.2s;z-index:60}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (min-width:1081px){
+  .hero{background:#f6efe3}
+  .hero::before{inset:0 0 150px 0;background:linear-gradient(90deg,#f6efe3 0%,#f6efe3 22%,rgba(246,239,227,.55) 34%,rgba(246,239,227,0) 47%),url("assets/products/hero-gold-marble-dining.jpg");background-size:auto 100%;background-repeat:no-repeat;background-position:right top}
+  .hero-grid{grid-template-columns:minmax(0,1fr);align-items:start;gap:0;padding:76px 0 40px;min-height:auto}
+  .hero-grid>div:first-child{max-width:600px}
+  .hero-grid h1{font-size:clamp(44px,4.4vw,60px);line-height:1.06}
+  .hero-card{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:6px 34px;align-items:center;margin-top:44px;max-width:none;padding:22px 30px}
+  .hero-card .hero-card-label{grid-column:1;grid-row:1;margin:0;align-self:end}
+  .hero-card strong{grid-column:1;grid-row:2;font-size:22px;margin:0;align-self:start}
+  .hero-card p{display:none}
+  .hero-contact{display:contents}
+  .hero-contact span{padding-top:0;border-top:0;border-left:1px solid rgba(32,33,31,.14);padding-left:26px;grid-row:1 / span 2}
+  .hero-contact span:nth-child(1){grid-column:2}
+  .hero-contact span:nth-child(2){grid-column:3}
+}
+.hero-credit{position:absolute;right:18px;bottom:166px;z-index:1;font-size:11px;letter-spacing:.6px;color:#6c6256;background:rgba(250,246,238,.82);padding:4px 9px}
+@media (max-width:1080px){.hero-credit{bottom:10px}}
 @media (max-width:1080px){
   .product-grid{grid-template-columns:repeat(2,1fr)}
   .hero-grid{grid-template-columns:1fr;min-height:auto}
@@ -228,6 +245,11 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
   .product-card{min-height:0}
   .footer-inner{display:block}
   .footer-inner div+div{margin-top:14px}
+}
+@media (max-width:1080px){
+  .hero::before{inset:0 0 auto 0;height:270px;background:url("assets/products/hero-gold-marble-dining.jpg");background-size:cover;background-position:72% 55%}
+  .hero-grid{padding-top:300px}
+  .hero-credit{top:238px;bottom:auto;right:12px}
 }
 </style>
 </head>
@@ -291,6 +313,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
       </div>
     </aside>
   </div>
+  <span class="hero-credit">Original design · Rendering</span>
 </header>
 
 <section class="facts">
@@ -373,7 +396,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
         </div>
         <p class="desc">This collection shows products that have been made in real production and can support OEM orders, repeat purchasing, material changes and customer-specific packaging.</p>
       </div>
-      <div class="collection-note"><b>Positioning:</b> Production Collection uses product images that Xin Yi Furniture has the right to display. Buyers can use this line for direct quotation, sample confirmation and OEM production discussion.</div>
+      <div class="collection-note"><b>Positioning:</b> Production Collection uses product images that Xin Yi Furniture has the right to display. Buyers can use this line for direct quotation, sample confirmation and OEM production discussion. Only a selection of production images is shown here, as many of our products are made for existing customers and we protect their confidentiality. Additional product photos are available on request.</div>
       <div class="product-grid">
         <article class="product-card">
           <div class="product-image"><img src="assets/products/dining_table_round_marble_set.png" alt="Round marble dining table set"></div>
@@ -420,13 +443,24 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
           </div>
         </article>
         <article class="product-card">
-          <div class="product-image"><img src="assets/products/wall_mirror_collection.png" alt="Wall mirror product collection"></div>
+          <div class="product-image"><img src="assets/products/wall_mirror_collection_clean.jpg" alt="Solid wood framed wall mirrors in walnut finish, three shapes"></div>
           <div class="product-body">
             <div class="product-index">05 / Production</div>
             <div class="line-badge">OEM-ready</div>
             <h3>Mirrors</h3>
             <p>Wall mirrors with wood frames, walnut finishes and custom shapes for bedrooms, living rooms and retail settings.</p>
             <div class="product-tags"><span>Wall Mirror</span><span>Wood Frame</span><span>Custom</span></div>
+            <a class="product-link" href="#contact">Send Inquiry</a>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-image"><img src="assets/products/counter_stool_velvet_channel.jpg" alt="Grey velvet counter stool with channel-tufted back and polished metal legs, front and rear views" loading="lazy"></div>
+          <div class="product-body">
+            <div class="product-index">06 / Production</div>
+            <div class="line-badge">OEM-ready</div>
+            <h3>Counter &amp; Bar Stools</h3>
+            <p>Upholstered counter stools with channel-tufted backs, velvet or PU fabric options, polished metal legs and footrest.</p>
+            <div class="product-tags"><span>Velvet</span><span>Channel Back</span><span>Metal Legs</span></div>
             <a class="product-link" href="#contact">Send Inquiry</a>
           </div>
         </article>
