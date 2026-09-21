@@ -143,6 +143,10 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .mini-card div{padding:14px 16px}
 .mini-card b{display:block;color:var(--charcoal)}
 .mini-card span{font-size:13px;color:var(--muted)}
+.mini-gallery.three{grid-template-columns:repeat(3,1fr)}
+.mini-gallery.three .mini-card img{height:260px}
+@media (max-width:1080px){.mini-gallery.three{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.mini-gallery.three{grid-template-columns:1fr}.mini-gallery.three .mini-card img{height:230px}}
 .process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .step{background:#fff;padding:26px}
 .step-num{font-size:13px;color:var(--gold-dark);font-weight:820;margin-bottom:20px}
@@ -531,6 +535,42 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
       </article>
 
       <article class="series">
+        <div class="series-media"><img id="s3img" src="assets/products/series-fluted-set.jpg" alt="Fluted dining series: stone-top dining table with cream channel-tufted chairs, coffee table, side table and detail views" width="1312" height="1199" loading="lazy"></div>
+        <div class="series-body">
+          <span class="line-badge concept-badge">Original design · Rendering</span>
+          <h3>Fluted Dining Series</h3>
+          <p>A stone-top dining table on a twin polished-gold pedestal base, with channel-tufted wing-back chairs in cream velvet and matching round coffee and side tables. Detail views show the stone edge, base joint and upholstery.</p>
+          <div class="chips" role="group" aria-label="View" data-target="s3img">
+            <button type="button" class="chip on" aria-pressed="true" data-src="assets/products/series-fluted-set.jpg" data-w="1312" data-h="1199" data-alt="Fluted dining series: stone-top dining table with cream channel-tufted chairs, coffee table, side table and detail views">Collection</button>
+            <button type="button" class="chip" aria-pressed="false" data-src="assets/products/series-fluted-chair.jpg" data-w="1312" data-h="1199" data-alt="Cream velvet wing-back dining chair with channel-tufted back and polished gold legs, front and rear views">Dining chair</button>
+          </div>
+          <ul class="series-list">
+            <li><b>Pieces</b>Dining table, dining chair, coffee table, side table</li>
+            <li><b>Shown with</b>Stone top, polished gold-tone metal, velvet upholstery</li>
+            <li><b>Status</b>Made to order &mdash; ready for sampling</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Send Inquiry</a>
+          <p class="series-note">Renderings for design direction. Final materials, dimensions and finish are confirmed at sampling.</p>
+        </div>
+      </article>
+
+      <article class="series flip">
+        <div class="series-media"><img src="assets/products/series-curved-gold-set.jpg" alt="Curved gold dining series: stone-top dining table with curved gold pedestal, cream wing-back armchairs and side chairs, coffee table and side table" width="1536" height="1024" loading="lazy"></div>
+        <div class="series-body">
+          <span class="line-badge concept-badge">Original design · Rendering</span>
+          <h3>Curved Gold Dining Series</h3>
+          <p>A stone-top dining table on curved polished-gold pedestal legs, paired with cream velvet wing-back armchairs and side chairs, plus a matching round coffee table and side table.</p>
+          <ul class="series-list">
+            <li><b>Pieces</b>Dining table, armchair, side chair, coffee table, side table</li>
+            <li><b>Shown with</b>Stone top, polished gold-tone metal, velvet upholstery</li>
+            <li><b>Status</b>Made to order &mdash; ready for sampling</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Send Inquiry</a>
+          <p class="series-note">Renderings for design direction. Final materials, dimensions and finish are confirmed at sampling.</p>
+        </div>
+      </article>
+
+      <article class="series">
         <div class="series-media"><img src="assets/products/series-sculpted-side-table.jpg" alt="Sculpted side table with a curved polished metal base and stone top" width="1145" height="1374" loading="lazy"></div>
         <div class="series-body">
           <span class="line-badge concept-badge">Original design · Developable sample</span>
@@ -546,21 +586,10 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
       </article>
 
       <div class="terms-sub">More concept directions</div>
-      <div class="featured-grid">
-        <div class="feature-photo">
-          <img src="assets/products/dining_table_blue_chair_set.png" alt="Dining table set with blue chairs">
-          <div class="feature-caption">
-            <small>Original Design Concept / Developable Sample</small>
-            <h3>Original dining-room directions for modern interiors.</h3>
-            <p>Use as a design starting point for sample development, material review and production feasibility discussion.</p>
-          </div>
-        </div>
-        <div class="mini-gallery">
-          <div class="mini-card"><img src="assets/products/coffee_table_console_collection.png" alt="Console coffee table concept collection"><div><span class="line-badge concept-badge">Original concept</span><b>Console & Side Tables</b><span>Original living-room directions for sample development.</span></div></div>
-          <div class="mini-card"><img src="assets/products/dining_chair_blue_gold.png" alt="Blue gold dining chair concept"><div><span class="line-badge concept-badge">Original concept</span><b>Premium Chairs</b><span>Color, frame and upholstery concepts for buyer review.</span></div></div>
-          <div class="mini-card"><img src="assets/products/rack_garment_storage_dimensions.png" alt="Garment storage rack concept dimensions"><div><span class="line-badge concept-badge">Developable sample</span><b>Garment Racks</b><span>Functional storage concept requiring final engineering confirmation.</span></div></div>
-          <div class="mini-card"><img src="assets/products/dining_table_black_marble_set.png" alt="Black marble dining table concept set"><div><span class="line-badge concept-badge">Original concept</span><b>Stone Top Dining</b><span>Statement table direction for sampling and feasibility review.</span></div></div>
-        </div>
+      <div class="mini-gallery three">
+        <div class="mini-card"><img src="assets/products/dining_chair_blue_gold.png" alt="Dining chair in blue fabric with gold frame" loading="lazy"><div><span class="line-badge concept-badge">Original concept</span><b>Premium Chairs</b><span>Color, frame and upholstery concepts for buyer review.</span></div></div>
+        <div class="mini-card"><img src="assets/products/concept-fabric-leather-chair.jpg" alt="Dining chair with textured fabric back, leather seat and champagne metal legs, front and rear views" loading="lazy"><div><span class="line-badge concept-badge">Original design · Rendering</span><b>Fabric &amp; Leather Dining Chair</b><span>Mixed-material chair with textured back, leather seat and champagne metal legs.</span></div></div>
+        <div class="mini-card"><img src="assets/products/dining_table_black_marble_set.png" alt="Black marble dining table concept set" loading="lazy"><div><span class="line-badge concept-badge">Original concept</span><b>Stone Top Dining</b><span>Statement table direction for sampling and feasibility review.</span></div></div>
       </div>
     </div>
   </section>
