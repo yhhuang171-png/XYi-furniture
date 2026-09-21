@@ -123,6 +123,11 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .product-link{margin-top:8px;color:var(--gold-dark);font-weight:800;font-size:13px}
 .collection-note{background:#f4f1ea;border:1px solid var(--line);padding:18px 20px;margin-bottom:22px;color:#504d45;font-size:14px}
 .collection-note b{color:var(--charcoal)}
+.prod-note{display:flex;align-items:center;justify-content:space-between;gap:28px;background:#fffdf8;border:1px solid var(--line);border-left:4px solid var(--gold);padding:20px 24px;margin-bottom:26px;box-shadow:0 12px 30px rgba(93,70,42,.06)}
+.prod-note p{margin:0;font-size:16px;line-height:1.55;color:#4b463d;max-width:780px}
+.prod-note b{color:var(--charcoal)}
+.prod-note .btn{flex:none}
+@media (max-width:760px){.prod-note{flex-direction:column;align-items:stretch;gap:16px;padding:18px}.prod-note .btn{width:100%}}
 .line-badge{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;background:rgba(184,135,70,.13);color:var(--gold-dark);font-size:11px;font-weight:820;letter-spacing:1.1px;text-transform:uppercase}
 .concept-badge{background:rgba(101,118,107,.16);color:var(--sage)}
 .featured-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
@@ -396,7 +401,10 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
         </div>
         <p class="desc">This collection shows products that have been made in real production and can support OEM orders, repeat purchasing, material changes and customer-specific packaging.</p>
       </div>
-      <div class="collection-note"><b>Positioning:</b> Production Collection uses product images that Xin Yi Furniture has the right to display. Buyers can use this line for direct quotation, sample confirmation and OEM production discussion. Only a selection of production images is shown here, as many of our products are made for existing customers and we protect their confidentiality. Additional product photos are available on request.</div>
+      <div class="prod-note">
+        <p><b>Selected production samples.</b> Many of our products are made for existing customers and stay confidential. Full photos and specifications are available on request.</p>
+        <a class="btn btn-primary" href="#contact">Request Product Photos</a>
+      </div>
       <div class="product-grid">
         <article class="product-card">
           <div class="product-image"><img src="assets/products/dining_table_round_marble_set.png" alt="Round marble dining table set"></div>
