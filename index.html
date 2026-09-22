@@ -8,6 +8,9 @@
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="shortcut icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -40,10 +43,21 @@ img{max-width:100%}
 .nav{position:sticky;top:0;z-index:30;background:rgba(248,243,233,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .brand{display:flex;align-items:center;gap:14px;min-width:0}
-.brand-mark{width:52px;height:52px;background:#fff;color:var(--gold-dark);border:1px solid rgba(92,70,43,.16);display:grid;place-items:center;font-size:19px;font-weight:850;letter-spacing:.4px;box-shadow:0 10px 28px rgba(93,70,42,.08)}
+.hero-contact a,.contact-value a{color:inherit;text-decoration:underline;text-decoration-color:rgba(183,133,77,.5);text-underline-offset:2px}
+.hero-contact a:hover,.contact-value a:hover{color:var(--gold-dark)}
+.brand-mark{height:52px;width:auto;display:block;object-fit:contain;flex:none}
 .brand-name{font-size:19px;font-weight:760;white-space:nowrap;color:var(--charcoal)}
 .brand-sub{font-size:11px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
-.brand-cn{font-size:12px;color:var(--gold-dark);font-weight:600;white-space:nowrap;margin:1px 0}
+.brand-cn{font-family:"Ma Shan Zheng",cursive;font-size:19px;line-height:1;color:var(--gold-dark);font-weight:400;white-space:nowrap;margin:2px 0 1px;letter-spacing:.5px}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:0;cursor:pointer;flex:none}
+.nav-toggle span{display:block;height:2px;width:100%;background:var(--charcoal);transition:.25s ease}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;flex-direction:column;background:var(--paper);border-top:1px solid var(--line);padding:8px 20px 22px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:14px 0;border-bottom:1px solid var(--line);color:var(--charcoal);font-size:16px}
+.mobile-menu a.nav-cta{background:var(--sage);color:#fff;text-align:center;border:0;margin-top:14px;padding:14px 16px}
 .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;color:#46443d}
 .nav-links a:hover{color:var(--gold-dark)}
 .nav-cta{background:var(--sage);color:#fff!important;padding:10px 16px;box-shadow:0 10px 22px rgba(63,78,66,.14)}
@@ -233,6 +247,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 @media (max-width:900px){
   .topbar-inner{align-items:flex-start;flex-direction:column;padding:9px 0}
   .nav-links{display:none}
+  .nav-toggle{display:flex}
   .facts-grid,.process{grid-template-columns:repeat(2,1fr)}
   .process.three{grid-template-columns:1fr}
   .about-grid,.factory-layout,.featured-grid,.contact-grid,.section-head,.series{display:block}
@@ -278,7 +293,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 <nav class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#top" aria-label="HuiZhou Xin Yi Furniture Co., Ltd">
-      <div class="brand-mark">XY</div>
+      <img class="brand-mark" src="assets/logo-mark.png" alt="Xin Yi Furniture logo" width="179" height="116">
       <div>
         <div class="brand-name">HuiZhou Xin Yi Furniture</div>
         <div class="brand-cn">惠州新镒家具有限公司</div>
@@ -294,6 +309,18 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
       <a href="#terms">Terms</a>
       <a href="#contact" class="nav-cta">Contact Us / Send Inquiry</a>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#factory">Factory</a>
+    <a href="#production">Production</a>
+    <a href="#original-design">Original Design</a>
+    <a href="#workflow">Process</a>
+    <a href="#terms">Terms</a>
+    <a href="#contact" class="nav-cta">Contact Us / Send Inquiry</a>
   </div>
 </nav>
 
@@ -319,8 +346,8 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
       <strong>Fast quotation for OEM / ODM furniture orders.</strong>
       <p>Share your target category, quantity, material, market and delivery plan. Our team will follow up with product options and pricing.</p>
       <div class="hero-contact">
-        <span><b>WhatsApp / WeChat</b><br>+86 18927377818<br>+86 13500181948<br>+1 9492997327</span>
-        <span><b>Email</b><br>erichuang@xy-furniture.com<br>sally@xy-furniture.com<br>yhhuang171@gmail.com</span>
+        <span><b>WhatsApp / WeChat</b><br><a href="https://wa.me/8618927377818" target="_blank" rel="noopener">+86 18927377818</a><br><a href="https://wa.me/8613500181948" target="_blank" rel="noopener">+86 13500181948</a><br><a href="https://wa.me/19492997327" target="_blank" rel="noopener">+1 9492997327</a></span>
+        <span><b>Email</b><br><a href="mailto:erichuang@xy-furniture.com">erichuang@xy-furniture.com</a><br><a href="mailto:sally@xy-furniture.com">sally@xy-furniture.com</a><br><a href="mailto:yhhuang171@gmail.com">yhhuang171@gmail.com</a></span>
       </div>
     </aside>
   </div>
@@ -653,9 +680,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
           <h3>HuiZhou Xin Yi Furniture Co., Ltd</h3>
           <p class="contact-lead">Direct factory communication for product development, sampling and bulk export orders.</p>
           <div class="contact-list">
-            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg><div><div class="contact-label">WhatsApp / WeChat</div><div class="contact-value">+86 18927377818<br>+86 13500181948<br>+1 9492997327</div></div></div>
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg><div><div class="contact-label">WhatsApp / WeChat</div><div class="contact-value"><a href="https://wa.me/8618927377818" target="_blank" rel="noopener">+86 18927377818</a><br><a href="https://wa.me/8613500181948" target="_blank" rel="noopener">+86 13500181948</a><br><a href="https://wa.me/19492997327" target="_blank" rel="noopener">+1 9492997327</a></div></div></div>
             <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.63 2.65a2 2 0 0 1-.45 2.11L8 9.72a16 16 0 0 0 6.28 6.28l1.24-1.24a2 2 0 0 1 2.11-.45c.85.3 1.74.51 2.65.63A2 2 0 0 1 22 16.92Z"/></svg><div><div class="contact-label">Tel / Fax</div><div class="contact-value">+86 18927377818<br>+86 13500181948<br>+1 9492997327</div></div></div>
-            <div class="contact-item"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><div class="contact-label">Email</div><div class="contact-value">erichuang@xy-furniture.com<br>sally@xy-furniture.com<br>yhhuang171@gmail.com</div></div></div>
+            <div class="contact-item"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:erichuang@xy-furniture.com">erichuang@xy-furniture.com</a><br><a href="mailto:sally@xy-furniture.com">sally@xy-furniture.com</a><br><a href="mailto:yhhuang171@gmail.com">yhhuang171@gmail.com</a></div></div></div>
             <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><div class="contact-label">Address</div><div class="contact-value">Huanghou Management Area, Zhenlong Town, Huiyang District, Huizhou, Guangdong, China</div></div></div>
           </div>
           <div class="contact-highlight">
@@ -709,6 +736,22 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 
 <div class="toast" id="toast">Thank you. Your inquiry has been sent.</div>
 <script>
+const navToggle = document.getElementById("navToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+if (navToggle && mobileMenu) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    navToggle.classList.toggle("open", isOpen);
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 const form = document.getElementById("inquiryForm");
 const toast = document.getElementById("toast");
 const submitButton = form.querySelector("button[type='submit']");
