@@ -438,7 +438,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
         <p><b>Selected production samples.</b> Many of our products are made for existing customers and stay confidential. Full photos and specifications are available on request.</p>
         <a class="btn btn-primary" href="#contact">Request Product Photos</a>
       </div>
-      <div class="product-grid">
+      <div class="product-grid" id="production-grid">
         <article class="product-card">
           <div class="product-image"><img src="assets/products/dining_table_round_marble_set.png" alt="Round marble dining table set"></div>
           <div class="product-body">
@@ -799,6 +799,89 @@ form.addEventListener("submit", async (event) => {
     submitButton.textContent = "Contact Us / Send Inquiry";
   }
 });
+
+/*
+  Production Collection — live product grid powered by Airtable
+  ----------------------------------------------------------------
+  Factory staff update products (name, description, tags, order,
+  status, photos) directly in the Airtable base below — no code
+  changes or GitHub deploy needed. Only records with Status =
+  "Published" are shown, sorted by the Order field.
+
+  Security note: this page is static (no server), so any API key
+  used here is visible in the page source to anyone who looks.
+  The token below is scoped to read-only access ("data.records:read")
+  on this one base only — it cannot write, delete, or reach any
+  other Airtable base. This is safe ONLY because this base holds
+  public catalog data. Never put non-public information in it.
+*/
+const AIRTABLE_BASE_ID = "appuNctIK7zH28dUy";
+const AIRTABLE_TABLE_ID = "tblcE2mVCaZhYWoqr";
+const AIRTABLE_TOKEN = "patWbiKLcLnprLzWW.8cfa6e9da2fbe2840885ca17daa32d0a7deafcde09e66577c1d3d7e73e96686d";
+
+function escapeHtml(value) {
+  const div = document.createElement("div");
+  div.textContent = String(value == null ? "" : value);
+  return div.innerHTML;
+}
+
+async function loadProductionGrid() {
+  const grid = document.getElementById("production-grid");
+  if (!grid) return;
+  try {
+    const params = new URLSearchParams({
+      filterByFormula: '{Status}="Published"',
+      "sort[0][field]": "Order",
+      "sort[0][direction]": "asc"
+    });
+    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}?${params.toString()}`;
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${AIRTABLE_TOKEN}` }
+    });
+    if (!response.ok) throw new Error("Airtable request failed: " + response.status);
+    const data = await response.json();
+    const records = (data.records || []).filter(
+      (record) => record.fields && Array.isArray(record.fields.Attachments) && record.fields.Attachments.length
+    );
+    if (!records.length) return; // keep the existing hard-coded cards as a fallback
+
+    grid.innerHTML = records
+      .map((record, index) => {
+        const fields = record.fields || {};
+        const name = fields.Name || "Untitled Product";
+        const description = fields.Description || "";
+        const imageUrl = fields.Attachments[0].url;
+        const tags = String(fields.Tags || "")
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean);
+        const orderLabel = String(index + 1).padStart(2, "0");
+        const tagsHtml = tags.length
+          ? `<div class="product-tags">${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`
+          : "";
+
+        return `
+          <article class="product-card">
+            <div class="product-image"><img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(name)}" loading="lazy"></div>
+            <div class="product-body">
+              <div class="product-index">${orderLabel} / Production</div>
+              <div class="line-badge">OEM-ready</div>
+              <h3>${escapeHtml(name)}</h3>
+              <p>${escapeHtml(description)}</p>
+              ${tagsHtml}
+              <a class="product-link" href="#contact">Send Inquiry</a>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+  } catch (error) {
+    console.warn("Could not load live product data from Airtable — showing default products instead.", error);
+    // Grid keeps its original hard-coded cards, so the page still looks complete.
+  }
+}
+
+loadProductionGrid();
 </script>
 </body>
 </html>
