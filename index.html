@@ -191,6 +191,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
 .product-index{font-size:12px;color:var(--gold-dark);font-weight:820;letter-spacing:2px;text-transform:uppercase}
 .product-body h3{font-size:22px;line-height:1.15;color:var(--charcoal)}
 .product-body p{font-size:14px;color:var(--muted)}
+.product-sku{font-size:12px;font-weight:820;color:var(--gold-dark);letter-spacing:.4px}
+.product-specs{font-size:12px;color:#655f56;border-top:1px dashed var(--line);padding-top:9px}
+.product-specs b{color:var(--charcoal);font-weight:820}
 .product-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}
 .product-tags span{font-size:11px;color:#504d45;background:#eee9df;padding:5px 8px}
 .product-link{margin-top:8px;color:var(--gold-dark);font-weight:800;font-size:13px}
@@ -361,6 +364,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#factory">Factory</a>
+      <a href="#quality">Quality</a>
       <a href="#production">Production</a>
       <a href="#original-design">Original Design</a>
       <a href="#workflow">Process</a>
@@ -374,6 +378,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about">About</a>
     <a href="#factory">Factory</a>
+    <a href="#quality">Quality</a>
     <a href="#production">Production</a>
     <a href="#original-design">Original Design</a>
     <a href="#workflow">Process</a>
@@ -483,6 +488,27 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
     </div>
   </section>
 
+  <section class="section" id="quality">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Quality Control</div>
+          <h2 class="title">Inspection at every stage of production.</h2>
+        </div>
+        <p class="desc">A structured inspection process, from incoming materials to the packed finished product, so buyers can trust what ships matches what was ordered.</p>
+      </div>
+      <div class="process three">
+        <div class="step"><div class="step-num">01 · IQC</div><h3>Incoming Material Inspection</h3><p>Metal tubing, board, stone, glass, fabric and hardware are checked against agreed specifications before production starts.</p></div>
+        <div class="step"><div class="step-num">02 · IPQC</div><h3>In-Process Inspection</h3><p>Checkpoints at cutting, bending, welding, spraying / electroplating and upholstery confirm each stage meets tolerance before the next step begins.</p></div>
+        <div class="step"><div class="step-num">03 · FQC / OQC</div><h3>Final &amp; Pre-Shipment Inspection</h3><p>Finished products are checked for structure, finish and packaging, including carton drop-test standards, before loading. Inspection records are kept on file.</p></div>
+      </div>
+      <div class="prod-note">
+        <p><b>Product guarantee.</b> Every order is backed by our factory warranty against manufacturing defects. Where an issue is confirmed to be a production quality issue, we work with customers on rework, replacement parts or agreed compensation.</p>
+        <a class="btn btn-primary" href="#contact">Ask About Our QC Process</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section product-showcase" id="production">
     <div class="container">
       <div class="section-head">
@@ -503,7 +529,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="product-index">01 / Production</div>
             <div class="line-badge">OEM-ready</div>
             <h3>Dining Tables</h3>
+            <div class="product-sku">SKU XY-DT-01</div>
             <p>Marble, sintered stone, glass and wood-look tables with metal bases for residential and commercial dining spaces.</p>
+            <div class="product-specs"><b>Material</b> Marble / sintered stone / glass top, metal base &nbsp;·&nbsp; <b>Category</b> Dining</div>
             <div class="product-tags"><span>Round</span><span>Extendable</span><span>Stone Top</span></div>
             <a class="product-link" href="#contact">Send Inquiry</a>
           </div>
@@ -514,7 +542,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="product-index">02 / Production</div>
             <div class="line-badge">OEM-ready</div>
             <h3>Dining Chairs</h3>
+            <div class="product-sku">SKU XY-DC-01</div>
             <p>Upholstered chairs with metal legs, curved backs, high-density foam and color options for coordinated collections.</p>
+            <div class="product-specs"><b>Material</b> Fabric / PU upholstery, high-density foam, metal legs &nbsp;·&nbsp; <b>Category</b> Dining</div>
             <div class="product-tags"><span>Fabric</span><span>PU</span><span>Metal Legs</span></div>
             <a class="product-link" href="#contact">Send Inquiry</a>
           </div>
@@ -525,7 +555,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="product-index">03 / Production</div>
             <div class="line-badge">OEM-ready</div>
             <h3>Coffee Tables</h3>
+            <div class="product-sku">SKU XY-CT-01</div>
             <p>Round nesting tables, console tables and side tables with wood, glass, metal and polished finishes.</p>
+            <div class="product-specs"><b>Material</b> Wood / glass top, polished or brushed metal base &nbsp;·&nbsp; <b>Category</b> Living Room</div>
             <div class="product-tags"><span>Nested Set</span><span>Side Table</span><span>Console</span></div>
             <a class="product-link" href="#contact">Send Inquiry</a>
           </div>
@@ -536,7 +568,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="product-index">04 / Production</div>
             <div class="line-badge">OEM-ready</div>
             <h3>Shelves / Racks</h3>
+            <div class="product-sku">SKU XY-SR-01</div>
             <p>Open storage racks, garment racks, bench storage and metal-frame shelving for home and utility spaces.</p>
+            <div class="product-specs"><b>Material</b> Powder-coated metal frame &nbsp;·&nbsp; <b>Category</b> Storage</div>
             <div class="product-tags"><span>Storage</span><span>Metal Frame</span><span>Utility</span></div>
             <a class="product-link" href="#contact">Send Inquiry</a>
           </div>
@@ -547,7 +581,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="product-index">05 / Production</div>
             <div class="line-badge">OEM-ready</div>
             <h3>Mirrors</h3>
+            <div class="product-sku">SKU XY-MR-01</div>
             <p>Wall mirrors with wood frames, walnut finishes and custom shapes for bedrooms, living rooms and retail settings.</p>
+            <div class="product-specs"><b>Material</b> Solid wood frame, walnut finish &nbsp;·&nbsp; <b>Category</b> Mirrors</div>
             <div class="product-tags"><span>Wall Mirror</span><span>Wood Frame</span><span>Custom</span></div>
             <a class="product-link" href="#contact">Send Inquiry</a>
           </div>
@@ -558,7 +594,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="product-index">06 / Production</div>
             <div class="line-badge">OEM-ready</div>
             <h3>Counter &amp; Bar Stools</h3>
+            <div class="product-sku">SKU XY-BS-01</div>
             <p>Upholstered counter stools with channel-tufted backs, velvet or PU fabric options, polished metal legs and footrest.</p>
+            <div class="product-specs"><b>Material</b> Velvet / PU upholstery, polished metal legs &nbsp;·&nbsp; <b>Category</b> Dining</div>
             <div class="product-tags"><span>Velvet</span><span>Channel Back</span><span>Metal Legs</span></div>
             <a class="product-link" href="#contact">Send Inquiry</a>
           </div>
@@ -862,9 +900,11 @@ form.addEventListener("submit", async (event) => {
   Production Collection — live product grid powered by Airtable
   ----------------------------------------------------------------
   Factory staff update products (name, description, tags, order,
-  status, photos) directly in the Airtable base below — no code
-  changes or GitHub deploy needed. Only records with Status =
-  "Published" are shown, sorted by the Order field.
+  status, photos, and optionally SKU / Specs) directly in the
+  Airtable base below — no code changes or GitHub deploy needed.
+  Only records with Status = "Published" are shown, sorted by the
+  Order field. SKU and Specs columns are optional: leave them
+  blank and the site simply won't show that line for that product.
 
   Security note: this page is static (no server), so any API key
   used here is visible in the page source to anyone who looks.
@@ -908,12 +948,16 @@ async function loadProductionGrid() {
         const fields = record.fields || {};
         const name = fields.Name || "Untitled Product";
         const description = fields.Description || "";
+        const sku = fields.SKU || "";
+        const specs = fields.Specs || fields.Specifications || "";
         const imageUrl = fields.Attachments[0].url;
         const tags = String(fields.Tags || "")
           .split(",")
           .map((tag) => tag.trim())
           .filter(Boolean);
         const orderLabel = String(index + 1).padStart(2, "0");
+        const skuHtml = sku ? `<div class="product-sku">SKU ${escapeHtml(sku)}</div>` : "";
+        const specsHtml = specs ? `<div class="product-specs">${escapeHtml(specs)}</div>` : "";
         const tagsHtml = tags.length
           ? `<div class="product-tags">${tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>`
           : "";
@@ -925,7 +969,9 @@ async function loadProductionGrid() {
               <div class="product-index">${orderLabel} / Production</div>
               <div class="line-badge">OEM-ready</div>
               <h3>${escapeHtml(name)}</h3>
+              ${skuHtml}
               <p>${escapeHtml(description)}</p>
+              ${specsHtml}
               ${tagsHtml}
               <a class="product-link" href="#contact">Send Inquiry</a>
             </div>
