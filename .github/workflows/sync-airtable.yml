@@ -1,0 +1,36 @@
+name: Sync public Airtable catalogue
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: public-catalogue-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - name: Sync published catalogue and images
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          AIRTABLE_TABLE_ID: ${{ secrets.AIRTABLE_TABLE_ID }}
+        run: python3 scripts/sync_airtable.py
+      - name: Commit public catalogue updates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add index.html assets/catalogue/
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Sync published Airtable catalogue'
+            git push origin HEAD:main
+            gh api --method POST repos/${{ github.repository }}/pages/builds
+          fi
