@@ -26,11 +26,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          needs_build=false
           git add index.html assets/catalogue/
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git commit -m 'Sync published Airtable catalogue'
             git push origin HEAD:main
+            needs_build=true
+          fi
+          if [ "$needs_build" = true ] || [ "${{ github.event_name }}" = workflow_dispatch ]; then
             gh api --method POST repos/${{ github.repository }}/pages/builds
           fi
