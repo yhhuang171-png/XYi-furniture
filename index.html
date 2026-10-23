@@ -344,7 +344,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
   .hero-credit{top:238px;bottom:auto;right:12px}
 }
 </style>
-</head>
+<link rel="stylesheet" href="/assets/interaction-motion.css"><script defer src="/assets/interaction-motion.js"></script></head>
 <body>
 <div class="topbar">
   <div class="container topbar-inner">
@@ -395,7 +395,9 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
   </div>
 </nav>
 
-<header class="hero" id="top">
+<header class="hero xy-immersive" id="top">
+<img class="xy-hero-image" src="/assets/hero-sculptural-1536.webp" srcset="/assets/hero-sculptural-768.webp 768w, /assets/hero-sculptural-1280.webp 1280w, /assets/hero-sculptural-1536.webp 1536w" sizes="100vw" width="1536" height="1024" alt="Concept dining-room scene with a sculptural table; rendering status unverified" fetchpriority="high" decoding="async">
+<button class="xy-motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button>
   <div class="container hero-grid">
     <div>
       <div class="eyebrow">Great Peace Group (HK) Co., Limited</div>
@@ -407,12 +409,16 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
         <span class="hero-badge">Export Orders</span>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Contact Us / Send Inquiry</a>
+        <a class="btn btn-primary" href="#contact">Discuss Your Project →</a>
         <a class="btn btn-outline" href="#production">View Collections</a>
       </div>
       <p class="hero-proof">Established in 2003, with a 30,000 sqm self-owned factory supporting OEM production, sample development and export orders.</p>
     </div>
-    <aside class="hero-card">
+
+  </div>
+  <span class="hero-credit">Concept visual · May be AI rendered · Production unverified</span>
+</header>
+<div class="container xy-contact-strip">    <aside class="hero-card">
       <div class="hero-card-label">Direct Factory Contact</div>
       <strong>Fast quotation for OEM / ODM furniture orders.</strong>
       <p>Share your target category, quantity, material, market and delivery plan. Our team will follow up with product options and pricing.</p>
@@ -420,11 +426,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
         <span><b>WhatsApp / WeChat</b><br><a href="https://wa.me/8618927377818" target="_blank" rel="noopener">+86 18927377818</a><br><a href="https://wa.me/8613500181948" target="_blank" rel="noopener">+86 13500181948</a><br><a href="https://wa.me/19492997327" target="_blank" rel="noopener">+1 9492997327</a></span>
         <span><b>Email</b><br><a href="mailto:erichuang@xy-furniture.com">erichuang@xy-furniture.com</a><br><a href="mailto:sally@xy-furniture.com">sally@xy-furniture.com</a><br><a href="mailto:yhhuang171@gmail.com">yhhuang171@gmail.com</a></span>
       </div>
-    </aside>
-  </div>
-  <span class="hero-credit">Original design · Rendering</span>
-</header>
-
+    </aside></div>
 <section class="facts">
   <div class="container facts-grid">
     <div class="fact"><strong>2003</strong><span>Established</span></div>
@@ -490,7 +492,7 @@ h1{font-size:clamp(44px,6.5vw,84px);line-height:1.02;letter-spacing:0;font-weigh
             <div class="trust-item"><div class="trust-num">04</div><div><b>Export-ready warehouse</b><span>Organized carton storage and pallet handling make shipment preparation clearer for wholesale and project orders.</span></div></div>
           </div>
           <div class="trust-cta">
-            <a class="btn btn-primary" href="#contact">Contact Us / Send Inquiry</a>
+            <a class="btn btn-primary" href="#contact">Discuss Your Project →</a>
             <a class="btn btn-outline" href="#production">View Collections</a>
           </div>
         </div>
