@@ -10,3 +10,9 @@ html.xy-paused *,html.xy-paused *:before,html.xy-paused *:after{animation:none!i
 .xy-switch figure{transition:opacity .5s ease,visibility 0s linear .5s}.xy-switch figure.xy-active{transition:opacity .5s ease,visibility 0s}
 
 .xy-motion-toolbar{display:flex;justify-content:flex-end;padding:14px 0}
+/* Warm mineral palette: scoped to the homepage. */
+body.xy-tonal{--paper:#f3f0e9;--stone:#e1dbd0;--ink:#262521;--muted:#716c63;--gold:#a58d68;--gold-dark:#786349;--sage:#575c51;--sage-soft:#e5e5dc;--line:rgba(74,65,51,.15);--deep:#292824;background:var(--paper)}
+.xy-tonal .topbar{background:#e6e1d7;color:#605a50}.xy-tonal .nav{background:#f3f0e9ed;border-bottom:1px solid #c9c0b144}.xy-tonal .nav-links>a:last-child{background:#4d5148;color:#faf6ee}.xy-tonal .brand-cn{color:#766044}.xy-tonal .xy-hero-image{filter:saturate(.78) contrast(1.055) brightness(.95)}
+.xy-tonal .hero.xy-immersive:before{background:linear-gradient(90deg,rgba(23,22,20,.83),rgba(29,27,23,.48) 38%,rgba(28,26,22,.03) 78%)}
+.xy-tonal .xy-immersive h1{color:#f5f0e7}.xy-tonal .xy-immersive .hero-copy{color:#e9e3d9}.xy-tonal .xy-immersive .eyebrow{color:#c9b696}.xy-tonal .xy-immersive .hero-badge{background:#201d1826;border-color:#e7dcc335;color:#e9e0d2}.xy-tonal .xy-immersive .hero-badge strong{color:#ccb58d}.xy-tonal .xy-immersive .btn-primary{background:#d7c6a8;color:#29251e;border-color:#d7c6a8}.xy-tonal .xy-immersive .btn-primary:hover{background:#e4d6be}.xy-tonal .xy-immersive .btn-outline{color:#f3ece0;border-color:#c3b9a475;background:#211d181c}.xy-tonal .xy-immersive .hero-proof{color:#cec5b6;border-left-color:#ae936a}.xy-tonal .facts{background:#e4e2d8}.xy-tonal .fact strong{color:#78664c}.xy-tonal .xy-contact-strip .hero-card-label{color:#74634d}
+@media(max-width:720px){.xy-tonal .hero.xy-immersive:before{background:linear-gradient(#22211e 0%,#22211e 42%,#22211ee8 54%,transparent 76%)}.xy-tonal .xy-hero-image{background:#22211e}}
