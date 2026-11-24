@@ -807,6 +807,7 @@ form.addEventListener("submit", async (event) => {
     if (!response.ok) throw new Error("Form submission failed");
     form.reset();
     showToast("Thank you. Your inquiry has been sent.");
+    if (typeof gtag === "function") gtag("event", "generate_lead", { form_id: "homepage_inquiry" });
   } catch (error) {
     showToast("Submission failed. Please contact us by WhatsApp / WeChat or email.");
   } finally {
@@ -815,6 +816,11 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
+document.querySelectorAll('a[href^="https://wa.me/"], a[href^="mailto:"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    if (typeof gtag === "function") gtag("event", "contact_click", { contact_method: link.href.startsWith("mailto:") ? "email" : "whatsapp" });
+  });
+});
 </script>
 </body>
 </html>
